@@ -1,0 +1,36 @@
+.navbar-layout {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 220px;
+    background-color: #0B0E17;
+}
+
+.logo {
+    margin-bottom: 40px;
+    color:white;
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: #94A3B8;
+    text-decoration: none;
+    border-radius: 8px;
+    padding: 10px 14px;
+}
+
+.nav-links a:hover {
+    color: #fff;
+}
+
+.nav-links a.active {
+    color: #fff;
+    background-color: #232A3E;
+    padding: 10px 14px;
+    border-radius: 8px;
+}

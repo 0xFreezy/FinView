@@ -1,12 +1,12 @@
 import './StockCard.css'
 
-export function StockCard() {
+export function StockCard({ticker,name,price,change}) {
     return (
         <div className="stock-card">
-            <h3>SPX</h3>
-            <p>S&P 500</p>
-            <p>$6,400</p>
-            <p>+0.82%</p>
+            <h3>{ticker}</h3>
+            <p>{name}</p>
+            <p>{price}</p>
+            <p>{change}</p>
         </div>
 
     )

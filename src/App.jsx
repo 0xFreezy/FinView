@@ -3,6 +3,7 @@ import Home from './pages/Home'
 import Crypto from './pages/Crypto'
 import Stocks from './pages/Stocks'
 import Navbar from './components/Navbar'
+import Dashboard from './pages/Dashboard'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/stocks' element={<Stocks />} />
           <Route path='/crypto' element={<Crypto />} />
+          <Route path="/dashboard/:symbol" element={<Dashboard />} />
 
 
 

@@ -1,0 +1,47 @@
+.dashboard {
+    min-height: 100vh;
+    padding: 30px;
+    background-color: #0B0E17;
+    color: white;
+}
+.metrics {
+    display: flex;
+    gap: 16px;
+}
+
+.metric-card {
+    background-color: #1a1f2e;
+    border: 1px solid #2a2f3e;
+    border-radius: 12px;
+    padding: 20px;
+    flex: 1;
+}
+.chart-valuation {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.valuation-summary {
+    background-color: #1a1f2e;
+    border: 1px solid #2a2f3e;
+    border-radius: 12px;
+    padding: 20px;
+    min-width: 250px;
+}.chart-valuation {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.chart-container {
+    flex: 1;
+}
+
+.valuation-summary {
+    background-color: #1a1f2e;
+    border: 1px solid #2a2f3e;
+    border-radius: 12px;
+    padding: 20px;
+    min-width: 250px;
+}

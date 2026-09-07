@@ -1,9 +1,13 @@
 import { useParams } from 'react-router-dom'
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts'
+import { useEffect, useState } from 'react'
+
 import './Dashboard.css'
 
 function Dashboard() {
     const { symbol } = useParams()
+      const [stock, setStock] = useState(null)
+    const [loading, setLoading] = useState(true)
 
     const priceData = [
         { date: 'Jan', price: 150 },
@@ -13,14 +17,32 @@ function Dashboard() {
         { date: 'May', price: 180 },
         { date: 'Jun', price: 189 },
     ]
+useEffect(() => {
+    async function fetchData() {
+        const response = await fetch(
+            `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${symbol}&apikey=YOUR_KEY`
+        )
 
-    const stock = {
-        name: 'Apple Inc.',
-        symbol: 'AAPL',
-        price: 189.23,
-        change: '+1.25%'
+        const data = await response.json()
+
+        console.log(data)
+
+        setStock({
+            name: symbol,
+            symbol: symbol,
+            price: 189.23,
+            change: '+1.25%'
+        })
+
+        setLoading(false)
     }
 
+    fetchData()
+}, [symbol])
+
+if (loading) {
+    return <p>Loading...</p>
+}
     return (
         <div className="dashboard">
             <div className="company-header">
@@ -85,6 +107,50 @@ function Dashboard() {
                         <p>-9.68%</p>
                     </div>
                 </div>
+            </div>
+            <div className="financial-history">
+                <h3>Financial History (USD in billions)</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Metric</th>
+                            <th>2021</th>
+                            <th>2022</th>
+                            <th>2023</th>
+                            <th>2024</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Revenue</td>
+                            <td>365.8</td>
+                            <td>394.3</td>
+                            <td>394.3</td>
+                            <td>383.3</td>
+                        </tr>
+                        <tr>
+                            <td>Gross Profit</td>
+                            <td>152.8</td>
+                            <td>170.8</td>
+                            <td>169.1</td>
+                            <td>174.3</td>
+                        </tr>
+                        <tr>
+                            <td>Net Income</td>
+                            <td>94.7</td>
+                            <td>99.8</td>
+                            <td>97.0</td>
+                            <td>96.0</td>
+                        </tr>
+                        <tr>
+                            <td>Free Cash Flow</td>
+                            <td>71.0</td>
+                            <td>111.4</td>
+                            <td>110.5</td>
+                            <td>97.5</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     )

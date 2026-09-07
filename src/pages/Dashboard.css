@@ -45,3 +45,28 @@
     padding: 20px;
     min-width: 250px;
 }
+.financial-history {
+    margin-top: 20px;
+}
+
+.financial-history table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.financial-history th, 
+.financial-history td {
+    padding: 10px;
+    text-align: right;
+    border-bottom: 1px solid #2a2f3e;
+}
+
+.financial-history th:first-child,
+.financial-history td:first-child {
+    text-align: left;
+}
+
+.financial-history th {
+    color: #8b8fa8;
+    font-weight: 500;
+}

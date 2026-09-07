@@ -4,6 +4,7 @@
     height: 100vh;
     width: 220px;
     background-color: #0B0E17;
+    border-right: 1px solid #2a2f3e;
 }
 
 .logo {

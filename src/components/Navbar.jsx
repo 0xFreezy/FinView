@@ -2,10 +2,10 @@ import { NavLink } from 'react-router-dom'
 import './Navbar.css'
 
 function Navbar() {
-    const navLinkClass = ({ isActive }) => isActive ? 'active' : '';
+  const navLinkClass = ({ isActive }) => isActive ? 'active' : '';
 
   return (
-    
+
     <div className='navbar-layout'>
       <div className="logo">
         <p>FinView</p>

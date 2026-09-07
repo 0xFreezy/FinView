@@ -6,47 +6,62 @@ import './Dashboard.css'
 
 function Dashboard() {
     const { symbol } = useParams()
-      const [stock, setStock] = useState(null)
+    const [stock, setStock] = useState(null)
     const [loading, setLoading] = useState(true)
+    const [timeSeries, setTimeSeries] = useState({})
+    const [chartData, setChartData] = useState([])
+   
+    useEffect(() => {
+        async function fetchData() {
+            const response = await fetch(
+                `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${symbol}&apikey=YOUR_KEY`
+            )
 
-    const priceData = [
-        { date: 'Jan', price: 150 },
-        { date: 'Feb', price: 160 },
-        { date: 'Mar', price: 155 },
-        { date: 'Apr', price: 170 },
-        { date: 'May', price: 180 },
-        { date: 'Jun', price: 189 },
-    ]
-useEffect(() => {
-    async function fetchData() {
-        const response = await fetch(
-            `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${symbol}&apikey=YOUR_KEY`
-        )
+            const data = await response.json()
 
-        const data = await response.json()
+            console.log(data)
+            const timeSeries = data["Time Series (Daily)"]
 
-        console.log(data)
+            console.log(timeSeries)
 
-        setStock({
-            name: symbol,
-            symbol: symbol,
-            price: 189.23,
-            change: '+1.25%'
-        })
+            if (!timeSeries) {
+                console.log("No time series data")
+                return
+            }
 
-        setLoading(false)
+            const entries = Object.entries(timeSeries)
+
+           
+            const formattedChartData = entries.map(([date, values]) => ({
+                date: date,
+                price: Number(values["4. close"])
+            }))
+
+            setChartData(formattedChartData)
+
+            console.log(chartData)
+
+            setStock({
+                name: symbol,
+                symbol: symbol,
+                price: 189.23,
+                change: '+1.25%'
+            })
+
+            setLoading(false)
+        }
+
+        fetchData()
+    }, [symbol])
+
+    if (loading) {
+        return <p>Loading...</p>
     }
-
-    fetchData()
-}, [symbol])
-
-if (loading) {
-    return <p>Loading...</p>
-}
     return (
         <div className="dashboard">
             <div className="company-header">
-                <img src="" alt="logo" />
+
+
                 <p>{stock.name}</p>
                 <p>{stock.symbol}</p>
                 <p>{stock.price}</p>
@@ -75,7 +90,7 @@ if (loading) {
             <div className="chart-valuation">
                 <div className="chart-container">
                     <ResponsiveContainer width="100%" height={300}>
-                        <LineChart data={priceData}>
+                        <LineChart data={chartData}>
                             <XAxis dataKey="date" />
                             <YAxis />
                             <Tooltip />

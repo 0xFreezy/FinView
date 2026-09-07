@@ -1,8 +1,15 @@
 import { StockCard } from '../components/StockCard'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import './Home.css'
 function Home() {
+    function handleSearch(e) {
+        if (e.key === 'Enter' && search.trim()) {
+            navigate(`/dashboard/${search.toUpperCase()}`)
+            setSearch('')
+        }}
     const [search, setSearch] = useState('')
+    const navigate = useNavigate()
     const trendingAssets = [
         {
             symbol: 'SPX',
@@ -39,6 +46,7 @@ function Home() {
                 value={search}
                 onChange={(event) => setSearch(event.target.value)}
                 placeholder="Search stocks, crypto, or companies..."
+                onKeyDown={handleSearch}
             />
 
             <h2>Trending Today</h2>

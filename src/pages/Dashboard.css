@@ -70,3 +70,22 @@
     color: #8b8fa8;
     font-weight: 500;
 }
+.time-range {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.time-range button {
+    background-color: transparent;
+    color: #8b8fa8;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.time-range button.active {
+    background-color: #232A3E;
+    color: white;
+}

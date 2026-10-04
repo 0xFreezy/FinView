@@ -1,38 +1,109 @@
 .home {
-    
-    padding:20px;
+    padding: 80px 60px ;
     background-color: #0B0E17;
-    height:100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content:center;
     align-items: center;
-}
-
-.home h1{
-    color:white;
-}
-.home input{
-    padding:20px 20px;
-    width: 500px;
-    border-radius:50px;
-    font-size:15px;
-    border:solid 1px #232A3C;
-}
-.home h2{
-    color:white;
-}
-.trending {
-    display:flex;
-    justify-content: center;
-    gap:20px;
+     box-sizing: border-box;
     
 }
-.stock-card{
-color:white;
-width:100px;
-height:100px;
-background-color: #151926;
-border-radius: 10px;
-border: 1px solid #232A3C;
+
+.home h1 {
+    color: white;
+    font-size: 58px;
+    font-weight: 700;
+    margin: 160px 0 30px;
+}
+
+.home .global-search {
+    width: 640px;
+    height: 62px;
+    border-radius: 16px;
+    padding: 0 24px;
+    background-color: #121621;
+    border: solid 1px #2A3042;
+    box-shadow: 0 0 25px rgba(139, 92, 246, 0.08);
+}
+
+.home .global-search input {
+    font-size: 17px;
+}
+
+.home .global-search input::placeholder {
+    color: #64748b;
+}
+
+.home h2 {
+    color: white;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 55px 0 22px;
+}
+.home-input::placeholder {
+    color: #64748b;
+}
+
+.trending {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+
+}
+
+.explore-markets {
+    display: flex;
+    gap: 20px;
+    margin-top: 45px;
+}
+
+.explore-card {
+    width: 180px;
+    padding: 17px 19px;
+    background-color: #1a1f2e;
+    border: 1px solid #2A3042;
+    border-radius: 12px;
+    color: white;
+    box-sizing: border-box;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    position: relative;
+}
+
+.explore-card h3 {
+    margin: 0 0 6px;
+    font-size: 15px;
+}
+
+.explore-card p {
+    margin: 0;
+    color: #64748b;
+    font-size: 12px;
+}
+
+.explore-card::after {
+    content: "→";
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    color: #8B5CF6;
+    font-size: 16px;
+    transition: transform 0.25s ease;
+}
+
+.explore-card:hover {
+    border-color: #8B5CF6;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(139, 92, 246, 0.15);
+}
+
+.explore-card:hover::after {
+    transform: translateX(4px);
+}
+.home-subtitle {
+    color: #94a3b8;
+    font-size: 18px;
+    margin: -20px 0 30px;
+    text-align: center;
 }

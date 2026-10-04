@@ -1,0 +1,41 @@
+.crypto-stats {
+    margin-top: 35px;
+    padding-bottom: 40px;
+}
+
+.crypto-stats h2 {
+    margin: 0 0 24px;
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+}
+
+.crypto-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 30px;
+}
+
+.crypto-stats-grid div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.crypto-stats-grid span {
+    color: #8b8fa8;
+    font-size: 14px;
+}
+
+.crypto-stats-grid strong {
+    color: white;
+    font-size: 17px;
+    font-weight: 600;
+}
+.crypto-stats-grid .positive {
+    color: #22C55E;
+}
+
+.crypto-stats-grid .negative {
+    color: #EF4444;
+}

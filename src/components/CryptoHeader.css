@@ -1,0 +1,76 @@
+.crypto-dashboard-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 26px;
+    margin-bottom: 20px;
+    background-color: #121826;
+    border: 1px solid #2a2f3e;
+    border-radius: 12px;
+}
+
+.crypto-info {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.crypto-dashboard-logo {
+    width: 78px;
+    height: 78px;
+    object-fit: contain;
+}
+
+.crypto-name {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.crypto-name h1 {
+    margin: 0;
+    font-size: 21px;
+    font-weight: 700;
+    color: white;
+}
+
+.crypto-name span {
+    font-size: 14px;
+    color: #8b8fa8;
+}
+
+.header-divider {
+    width: 1px;
+    height: 40px;
+    background-color: #2a2f3e;
+    margin: 0 10px;
+}
+
+.crypto-price-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+}
+
+.crypto-price {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.crypto-price strong {
+    font-size: 30px;
+    font-weight: 700;
+    color: white;
+}
+
+.crypto-price span {
+    font-size: 13px;
+    color: #8b8fa8;
+}
+
+.crypto-price-info p {
+    margin: 0;
+    font-size: 13px;
+}

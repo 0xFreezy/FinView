@@ -1,9 +1,9 @@
-.stock-row {
+.crypto-row {
     display: grid;
     grid-template-columns: 50px 1fr 130px 100px 130px;
     align-items: center;
 
-    padding: 13px 20px;
+    padding: 17px 20px;
 
     background-color: #151926;
     border-bottom: 1px solid #232A3C;
@@ -12,66 +12,77 @@
     text-decoration: none;
 
     transition: background-color 0.2s ease;
-    
 }
 
-.stock-row:hover {
+.crypto-row:hover {
     background-color: #1b2030;
 }
 
-.stock-rank {
+.crypto-rank {
     color: #64748b;
     font-size: 14px;
 }
 
-.stock-name {
+.crypto-row-name {
     display: flex;
     align-items: center;
     gap: 12px;
 }
 
-.stock-name > div:last-child {
+.crypto-row-name > div:last-child {
     display: flex;
     flex-direction: column;
     gap: 3px;
 }
 
-.stock-name strong {
+.crypto-row-name strong {
     font-size: 15px;
+    color: white;
 }
 
-.stock-name span {
+.crypto-row-name span {
     color: #94a3b8;
     font-size: 13px;
 }
 
-.stock-logo {
+.crypto-logo {
     width: 34px;
     height: 34px;
+
     object-fit: contain;
+
     border-radius: 50%;
     background-color: #232A3C;
 }
 
-.stock-price {
-  margin:0;
+.crypto-price {
+    margin: 0;
+    
     font-size: 14px;
+    color: white;
 }
 
 .positive {
-   
+    margin: 0;
+    
     color: #22C55E;
     font-size: 14px;
 }
 
 .negative {
+    margin: 0;
     
     color: #EF4444;
     font-size: 14px;
 }
 
-.stock-market-cap {
+.crypto-market-cap {
+    margin: 0;
     
     font-size: 14px;
     color: #cbd5e1;
+}
+.crypto-row .positive,
+.crypto-row .negative {
+    margin: 0;
 }

@@ -1,0 +1,25 @@
+.crypto-metrics {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.crypto-metric-card {
+    background-color: #1a1f2e;
+    border: 1px solid #2a2f3e;
+    border-radius: 12px;
+    padding: 40px 20px;
+    flex: 1;
+}
+
+.crypto-metric-card span {
+    display: block;
+    margin-bottom: 9px;
+    color: #8b8fa8;
+    font-size: 14px;
+}
+
+.crypto-metric-card strong {
+    color: white;
+    font-size: 18px;
+}

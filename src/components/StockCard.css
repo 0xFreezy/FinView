@@ -1,7 +1,67 @@
 .stock-card {
+    width: 220px;
+    padding: 22px;
     background-color: #151926;
     border: 1px solid #232A3C;
-    border-radius: 12px;
-    padding: 20px;
-     width: 160px;
+    border-radius: 14px;
+    color: white;
+    box-sizing: border-box;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+    display: flex;
+    flex-direction: column;
+   
+    min-height: 180px;
+    cursor:pointer;
+    gap: 24px;
+}
+
+.stock-card:hover {
+    transform: translateY(-3px);
+    border-color: #3b82f6;
+    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.15);
+}
+
+.stock-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.stock-info img {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-color: #1e293b;
+    padding: 2px;
+    object-fit: contain;
+}
+
+.stock-info h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.stock-info p {
+    margin: 3px 0 0;
+    color: #64748b;
+    font-size: 13px;
+}
+
+.stock-price strong {
+    display: block;
+    font-size: 24px;
+}
+
+.stock-price span {
+    display: block;
+    margin-top: 3px;
+    font-size: 15px;
+}
+
+.stock-price .positive {
+    color: #22C55E;
+}
+
+.stock-price .negative {
+    color: #EF4444;
 }
